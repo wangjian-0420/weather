@@ -3,18 +3,18 @@
     package="com.wangjian.weather"
     android:versionCode="1"
     android:versionName="1.0" >
-
+<uses-permission android:name="android.permission.INTERNET"/>
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="17" />
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/weather"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.wangjian.weather.MainActivity"
+            android:name="com.wangjian.weather.activity.ChooseAreaActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,6 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.wangjian.weather.activity.WeatherActivity"></activity>
+        <service android:name="com.wangjian.weather.service.AutoUpdateService"></service>
+        <receiver android:name="com.wangjian.weather.receiver.AutoUpdateReceiver"></receiver>
     </application>
 
 </manifest>
